@@ -31,11 +31,12 @@ const images = [
 const gallery = document.querySelector('ul.gallery');
 const items = [];
 
-images.forEach((image) => {
-  const item = document.createElement('li');
-  item.classList.add('gallery-item');
-
+for (const image of images) {
+  const li = document.createElement('li');
   const img = document.createElement('img');
-
-
-});
+  img.src = image.url;
+  img.alt = image.alt;
+  li.append(img);
+  items.push(li);
+}
+gallery.append(...items);
